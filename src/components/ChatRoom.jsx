@@ -5,6 +5,7 @@ export default function ChatRoom(props) {
   const roomId = "chat";
   const { messages, sendMessage } = useChat(roomId);
   const [newMessage, setNewMessage] = useState("");
+
   //
 
   const handleNewMessageChange = (event) => {
@@ -28,6 +29,7 @@ export default function ChatRoom(props) {
                 message.ownedByCurrentUser ? "my-message" : "received-message"
               }`}
             >
+              <span className="screen-name">{message.screenName}</span> :{" "}
               {message.body}
             </li>
           ))}

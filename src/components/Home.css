@@ -1,0 +1,51 @@
+.home-container {
+  background-image: url(../img/desktop2.png);
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+}
+
+.sign-on {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  background-image: url(../img/signon.png);
+  background-size: contain;
+  width: 640px;
+  height: 436px;
+  margin-top: 10%;
+  margin-left: 30%;
+  position: absolute;
+}
+
+.sign-in-form {
+  margin-top: 28%;
+  margin-left: 40%;
+}
+
+.sign-in-button {
+  display: none;
+}
+input {
+  border: none;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.screen-name-input-field {
+  height: 70%;
+  margin-left: 15px;
+  margin-top: 5px;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
+
+#connecting {
+  display: none;
+  box-shadow: 2px 2px 4px 4px gray;
+}
