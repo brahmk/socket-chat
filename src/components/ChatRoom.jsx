@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import useChat from "./useChat";
 
 export default function ChatRoom(props) {
-  const { roomId } = props.params;
+  const roomId = "chat";
   const { messages, sendMessage } = useChat(roomId);
   const [newMessage, setNewMessage] = useState("");
   //

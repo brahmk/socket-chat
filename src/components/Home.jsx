@@ -17,7 +17,7 @@ export default function Home() {
         onChange={handleRoomChange}
         className="text-input-field"
       />
-      <Link to={`/${roomName}`} className="enter-room-button">
+      <Link to={`/chat`} className="enter-room-button">
         Join Chat
       </Link>
     </div>

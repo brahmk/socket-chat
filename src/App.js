@@ -10,7 +10,7 @@ function App() {
     <Router>
       <Routes>
         <Route exact path="/" element={<Home />} />
-        <Route exact path="/:roomId" element={<ChatRoom />} />
+        <Route exact path="/chat" element={<ChatRoom />} />
       </Routes>
     </Router>
   );

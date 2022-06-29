@@ -7,6 +7,7 @@ const SOCKET_SERVER_URL = "http://localhost:4000";
 export default function useChat(roomId) {
   const [messages, setMessages] = useState([]);
   const socketRef = useRef();
+  const screenName = localStorage.getItem("screenName");
 
   useEffect(() => {
     socketRef.current = socketIOClient(SOCKET_SERVER_URL, {
@@ -29,6 +30,7 @@ export default function useChat(roomId) {
   const sendMessage = (messageBody) => {
     socketRef.current.emit(NEW_CHAT_MESSAGE_EVENT, {
       body: messageBody,
+      screenName,
       senderId: socketRef.current.id,
     });
   };
