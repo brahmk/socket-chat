@@ -4,6 +4,7 @@ import "./App.css";
 import useSocket from "use-socket.io-client";
 import Home from "./components/Home";
 import ChatRoom from "./components/ChatRoom";
+import Connecting from "./components/Connecting";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route exact path="/chat" element={<ChatRoom />} />
+        <Route exact path="/connecting" element={<Connecting />} />
       </Routes>
     </Router>
   );

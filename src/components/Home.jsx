@@ -1,11 +1,14 @@
 import React, { useState } from "react";
-import { Link, Navigate } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import connecting from "../img/dialup.gif";
+import useSound from "use-sound";
+import modem from "../dialup-short.mp3";
+
 import "./Home.css";
 
 export default function Home() {
   const [screenName, setScreenName] = useState("");
+  const [playSound] = useSound(modem, { volume: 1.0 });
+
   let navigate = useNavigate();
 
   const handleScreenNameChange = (event) => {
@@ -14,14 +17,14 @@ export default function Home() {
 
   const handleSignIn = (event) => {
     localStorage.setItem("screenName", screenName);
-    document.getElementById("connecting").style.display = "block";
-    navigate("/chat");
+    playSound();
+
+    navigate("/connecting");
   };
 
   return (
     <div className="home-container">
       <div className="sign-on">
-        <img src={connecting} id="connecting" />
         <form name="login" className="sign-in-form" onSubmit={handleSignIn}>
           <input
             type="text"
