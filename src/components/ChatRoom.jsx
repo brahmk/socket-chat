@@ -1,10 +1,14 @@
 import React, { useState } from "react";
 import useChat from "./useChat";
+import "./ChatRoom.css";
+import useSound from "use-sound";
+import im from "../imsend.wav";
 
 export default function ChatRoom(props) {
   const roomId = "chat";
   const { messages, sendMessage } = useChat(roomId);
   const [newMessage, setNewMessage] = useState("");
+  const [playSound] = useSound(im, { volume: 1.0 });
 
   //
 
@@ -15,35 +19,39 @@ export default function ChatRoom(props) {
   const handleSendMessage = () => {
     sendMessage(newMessage);
     setNewMessage("");
+    playSound();
   };
 
   return (
-    <div className="chat-room-container">
-      <h1 className="room-name">Room: {roomId}</h1>
-      <div className="messages-container">
-        <ol className="messages-list">
+    <div className="chatroom">
+      <div className="window">
+        <div className="scrollbox">
           {messages.map((message, i) => (
-            <li
+            <p
               key={i}
               className={`message-item ${
                 message.ownedByCurrentUser ? "my-message" : "received-message"
               }`}
             >
-              <span className="screen-name">{message.screenName}</span> :{" "}
-              {message.body}
-            </li>
+              <span
+                className={`${
+                  message.ownedByCurrentUser ? "screen-name1" : "screen-name2"
+                }`}
+              >
+                {message.screenName}
+              </span>{" "}
+              : {message.body}
+            </p>
           ))}
-        </ol>
+        </div>
+        <input
+          type="text"
+          value={newMessage}
+          onChange={handleNewMessageChange}
+          className="message-input"
+        />
+        <button onClick={handleSendMessage} className="send-button"></button>
       </div>
-      <textarea
-        value={newMessage}
-        onChange={handleNewMessageChange}
-        className="new-message-input-field"
-        placeholder="Send a message"
-      />
-      <button onClick={handleSendMessage} className="send-button">
-        Send
-      </button>
     </div>
   );
 }
