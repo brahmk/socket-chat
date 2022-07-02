@@ -40,7 +40,7 @@ export default function ChatRoom(props) {
               >
                 {message.screenName}
               </span>{" "}
-              : {message.body}
+              : {message.body} <p>{message.response}</p>
             </p>
           ))}
         </div>
