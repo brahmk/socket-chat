@@ -1,5 +1,5 @@
-import { createServer } from "http";
-const server = createServer();
+const http = require("http");
+const server = http.createServer();
 const io = require("socket.io")(server, {
   cors: {
     origin: "*",

@@ -1,0 +1,108 @@
+@import url("https://fonts.googleapis.com/css2?family=Tinos&display=swap");
+
+.chatroom {
+  background-repeat: no-repeat;
+  background-image: url(../img/homescreen.png);
+  height: 100vh;
+  width: 100vw;
+  background-size: cover;
+  font-family: "Tino";
+  color: black;
+  font-size: 18px;
+  font-weight: 700;
+  overflow-y: hidden;
+
+  z-index: 0;
+}
+-webkit-scrollbar-thumb {
+  border-radius: 0%;
+}
+
+.window {
+  background-image: url(../img/im-window.png);
+  background-repeat: no-repeat;
+  margin-left: 22%;
+  margin-top: 20%;
+  background-size: contain;
+  position: absolute;
+  display: inline-flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  width: 547px;
+  height: 456px;
+}
+
+.scrollbox {
+  display: flex;
+  flex-direction: column;
+  margin-top: 15%;
+  margin-left: 3%;
+  color: black;
+  font-size: 18px;
+  font-weight: 700;
+  height: 35%;
+  width: 94%;
+
+  overflow-y: scroll;
+  position: absolute;
+}
+
+.chat-input {
+  position: absolute;
+  margin-left: 3%;
+  height: 10%;
+  width: 95%;
+  color: black;
+  border: none;
+  margin-top: 53%;
+}
+
+.message-input {
+  font-family: "Tino";
+  box-sizing: content-box;
+  position: relative;
+  top: 64%;
+  height: 10%;
+  left: 3%;
+  width: 93%;
+  border: none;
+}
+
+input {
+  border: none;
+  font-size: 18px;
+  font-weight: 500;
+}
+.send-button {
+  z-index: 10;
+  margin-top: 57%;
+  margin-left: 85%;
+  width: 70px;
+  height: 70px;
+  opacity: 0.5;
+  background-color: darkolivegreen;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
+
+.screen-name1 {
+  color: red;
+}
+
+.screen-name2 {
+  color: blue;
+}
+
+.msgbox {
+  margin: 0;
+}
+
+p {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
