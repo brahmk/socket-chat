@@ -8,13 +8,23 @@ export default function useBot(input) {
     ["how old are you"], //3
     [
       "who are you",
+      "what is your name",
+      "who is this",
+      "whos this",
       "are you human",
       "are you bot",
       "are you human or bot",
       "are you a robot",
       "who am i talking to",
     ], //4
-    ["i am hungry", "i am bored", "i am tired"], // 5
+    [
+      "i am hungry",
+      "i am bored",
+      "i am tired",
+      "im hungry",
+      "im bored",
+      "im tired",
+    ], // 5
   ];
 
   // responses
@@ -22,24 +32,24 @@ export default function useBot(input) {
   const answers = [
     [
       "Fine... how are you?",
-      "Pretty well, how are you?",
-      "Fantastic, how are you?",
+      "Pretty good, how are you?",
+      "Great, and yourself?",
     ], //0
     ["Hello!", "Hi!", "Hey!", "Hi there!", "Howdy"], //1
     [
       "Nothing much",
       "Chatting with you!",
-      "Can you guess?",
-      "I don't know actually",
+      "Living the dream",
+      "Same old stuff, you?",
     ], //2
-    ["younger than you"], //3
+    ["Younger than you :D"], //3
     ["I am DumberChild", "None of your business", "Don't worry about that :)"], //4
     ["Same", "Me too", "Who cares"], //5
   ];
 
   // alts
 
-  const alternatives = ["Go on...", "Cool...", "Interesting..."];
+  const alternatives = ["Go on...", "Cool", "Interesting..."];
 
   function compare(inputsArray, answersArray, string) {
     let item;
