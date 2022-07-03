@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import socketIOClient from "socket.io-client";
+import useBot from "./useBot";
 
 const NEW_CHAT_MESSAGE_EVENT = "newChatMessage";
 const SOCKET_SERVER_URL = "http://localhost:4000";
@@ -8,6 +9,7 @@ export default function useChat(roomId) {
   const [messages, setMessages] = useState([]);
   const socketRef = useRef();
   const screenName = localStorage.getItem("screenName");
+  const { generateResponse } = useBot();
 
   useEffect(() => {
     socketRef.current = socketIOClient(SOCKET_SERVER_URL, {
@@ -28,9 +30,11 @@ export default function useChat(roomId) {
   }, [roomId]);
 
   const sendMessage = (messageBody) => {
+    let response = generateResponse(messageBody);
     socketRef.current.emit(NEW_CHAT_MESSAGE_EVENT, {
       body: messageBody,
       screenName,
+      response,
       senderId: socketRef.current.id,
     });
   };

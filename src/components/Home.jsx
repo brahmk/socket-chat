@@ -16,6 +16,7 @@ export default function Home() {
   };
 
   const handleSignIn = (event) => {
+    event.preventDefault();
     localStorage.setItem("screenName", screenName);
     playSound();
 

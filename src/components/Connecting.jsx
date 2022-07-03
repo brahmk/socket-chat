@@ -7,7 +7,7 @@ export default function Connecting() {
   useEffect(() => {
     const timer = setTimeout(() => {
       navigate("/chat");
-    }, 7500);
+    }, 7000);
     return () => clearTimeout(timer);
   }, []);
 
@@ -20,6 +20,7 @@ export default function Connecting() {
             type="text"
             autoFocus="autofocus"
             className="screen-name-input-field"
+            style={{ display: "none" }}
           />
           <button className="sign-in-button">Enter</button>
         </form>
