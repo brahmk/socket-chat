@@ -35,12 +35,12 @@ export default function ChatRoom(screenName) {
           {messages.map((message, i) => (
             <>
               <p key={i} className={"im"}>
-                <span className={"screen-name1"}>{message.screenName}</span> :{" "}
+                <span className={"screen-name1"}>{message.screenName}</span>:{" "}
                 {message.body}
               </p>
 
               <p className={"im"}>
-                <span className={"screen-name2"}>DumberChild</span> :{" "}
+                <span className={"screen-name2"}>user_7615</span>:{" "}
                 {message.response}
               </p>
             </>

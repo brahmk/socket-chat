@@ -25,6 +25,10 @@ export default function useBot(input) {
       "im bored",
       "im tired",
     ], // 5
+
+    ["what is your favorite movie"], //6
+
+    ["what is your favorite food"], //7
   ];
 
   // responses
@@ -42,14 +46,21 @@ export default function useBot(input) {
       "Living the dream",
       "Same old stuff, you?",
     ], //2
-    ["Younger than you :D"], //3
-    ["I am DumberChild", "None of your business", "Don't worry about that :)"], //4
+    ["I was built last week!"], //3
+    [
+      "Honestly...I don't know",
+      "None of your business",
+      "Don't worry about that",
+    ], //4
     ["Same", "Me too", "Who cares"], //5
+
+    ["Pirates of Silicon Valley, what's yours?"], //6
+    ["I've actually never eaten food..."], //7
   ];
 
   // alts
 
-  const alternatives = ["Go on...", "Cool", "Interesting..."];
+  const alternatives = ["Yeah...", "Cool", "Interesting..."];
 
   function compare(inputsArray, answersArray, string) {
     let item;
